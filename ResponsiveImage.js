@@ -25,6 +25,9 @@ export default class ResponsiveImage extends React.Component {
   };
 
   static getClosestHighQualitySource(sources, preferredPixelRatio) {
+    if (!sources) {
+      return null;
+    }
     let pixelRatios = Object.keys(sources);
     if (!pixelRatios.length) {
       return null;
